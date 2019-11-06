@@ -13,6 +13,8 @@ import { BestPracticesComponent } from './best-practices/best-practices.componen
 import { ResourcesComponent } from './resources/resources.component';
 import { SecurityAssessmentComponent } from './security-assessment/security-assessment.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { LoginComponent } from './authentication/login/login.component';
+import { SignUpComponent } from './authentication/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     DevsecopsComponent,
     BestPracticesComponent,
     ResourcesComponent,
-    SecurityAssessmentComponent
+    SecurityAssessmentComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
