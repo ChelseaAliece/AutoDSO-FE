@@ -6,18 +6,37 @@ import { DevsecopsComponent } from './devsecops/devsecops.component';
 import { BestPracticesComponent } from './best-practices/best-practices.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { LoginComponent } from './authentication/login/login.component';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { SecurityAssessmentComponent } from './security-assessment/security-assessment.component';
+import { ManagementComponent } from './management/management.component';
 
 
 const routes: Routes = [
- { path: '', component: HomePageComponent},
- { path: 'home', component: HomePageComponent},
- { path: 'about', component: AutodsoComponent},
- { path: 'devsecops', component: DevsecopsComponent},
- { path: 'best-practices', component: BestPracticesComponent},
- { path: 'resources', component: ResourcesComponent},
-//  { path: 'assessment', component: BestPracticesComponent},
-  { path: 'login', component: LoginComponent},
-//  { path: 'manage', component: ResourcesComponent},
+  {
+    path: '',
+    children: [
+      { path: '', component: HomePageComponent },
+      { path: 'home', component: HomePageComponent },
+      { path: 'about', component: AutodsoComponent },
+      { path: 'devsecops', component: DevsecopsComponent },
+      { path: 'best-practices', component: BestPracticesComponent },
+      { path: 'resources', component: ResourcesComponent },
+      { path: 'assessment', component: SecurityAssessmentComponent }
+    ],
+    component: HomeComponent
+  },
+  //  { path: 'assessment', component: BestPracticesComponent},
+  // {
+  //   path: 'manage',
+  //   children: [
+  //     { path: '', component: },
+  //   ],
+  //   component: ManagementComponent
+  // },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  //  { path: 'manage', component: ResourcesComponent},
 ];
 
 @NgModule({

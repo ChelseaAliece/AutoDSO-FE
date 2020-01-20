@@ -1,31 +1,35 @@
-<!-- Jumbotron -->
-<div class="jumbotron text-center">
-
-    <!-- Title -->
-    <h2 class="card-title h2">Material Design for Bootstrap</h2>
-    <!-- Subtitle -->
-    <p class="blue-text my-4 font-weight-bold">Powerful and free Material Design UI KIT</p>
-  
-    <!-- Grid row -->
-    <div class="row d-flex justify-content-center">
-  
-      <!-- Grid column -->
-      <div class="col-xl-7 pb-2">
-  
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aliquid dolorem ea distinctio exercitationem delectus qui, quas eum architecto, amet quasi accusantium, fugit consequatur ducimus obcaecati numquam molestias hic itaque accusantium doloremque laudantium, totam rem aperiam.</p>
-  
-      </div>
-      <!-- Grid column -->
-  
+<div style="height: 100vh">
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="container">
+      <!-- Grid row -->
+      <div class="row">
+        <!-- Grid column -->
+        <div class="col-md-12">
+          <!--Register form-->
+          <form class="text-center border border-light p-5" action="#!">
+            <p class="h4 mb-4">Sign in</p>
+            <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+            <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+            <div class="d-flex justify-content-around">
+              <div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                  <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                </div>
+              </div>
+              <div>
+                <a [routerLink]="['/forgot-password']" routerLinkActive="router-link-active">Forgot password?</a>
+              </div>
+            </div>
+            <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+            <button class="btn btn-danger btn-block my-4" type="submit" [routerLink]="['/home']" routerLinkActive="router-link-active" >Return Home</button>
+            <p>Not a member?
+              <a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a>
+            </p>
+          </form>
+          <!--/Register form-->
+        </div> <!-- Grid column -->
+      </div> <!-- Grid row -->
     </div>
-    <!-- Grid row -->
-  
-    <hr class="my-4">
-  
-    <div class="pt-2">
-      <button type="button" class="btn btn-blue waves-effect">Buy now <span class="far fa-gem ml-1"></span></button>
-      <button type="button" class="btn btn-outline-primary waves-effect">Download <i class="fas fa-download ml-1"></i></button>
-    </div>
-  
   </div>
-  <!-- Jumbotron -->
+</div> <!-- /Start your project here-->

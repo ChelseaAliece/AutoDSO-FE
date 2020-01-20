@@ -14,7 +14,10 @@ import { ResourcesComponent } from './resources/resources.component';
 import { SecurityAssessmentComponent } from './security-assessment/security-assessment.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { LoginComponent } from './authentication/login/login.component';
-import { SignUpComponent } from './authentication/sign-up/sign-up.component';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { ManagementComponent } from './management/management.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { SignUpComponent } from './authentication/sign-up/sign-up.component';
     ResourcesComponent,
     SecurityAssessmentComponent,
     LoginComponent,
-    SignUpComponent
+    HomeComponent,
+    FooterComponent,
+    RegisterComponent,
+    ManagementComponent
   ],
   imports: [
     BrowserModule,

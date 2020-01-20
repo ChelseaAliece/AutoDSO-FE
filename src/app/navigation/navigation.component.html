@@ -1,5 +1,5 @@
-  <mdb-navbar SideClass="navbar navbar-expand-md navbar-light blue-grey" [containerInside]="false">
-    <mdb-navbar-brand><a class="navbar-brand">Auto<span>DSO</span></a></mdb-navbar-brand>
+  <mdb-navbar  SideClass="navbar sticky-top navbar-expand-md navbar-light white" [containerInside]="true">
+    <mdb-navbar-brand><a class="navbar-brand">Auto<span class="logospan">DSO</span></a></mdb-navbar-brand>
     <links>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -13,8 +13,7 @@
                 DevSecOps<span class="caret"></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
                     <a class="dropdown-item waves-light" [routerLink]="['/devsecops']" routerLinkActive="router-link-active"  mdbWavesEffect>DevSecOps Overview</a>
-                    <a class="dropdown-item waves-light" [routerLink]="['/best-practices']" routerLinkActive="router-link-active"  mdbWavesEffect>Best Practices</a>
-                    <a class="dropdown-item waves-light" [routerLink]="['/resources']" routerLinkActive="router-link-active"  mdbWavesEffect>Resources</a>
+                    <a class="dropdown-item waves-light" [routerLink]="['/best-practices']" routerLinkActive="router-link-active"  mdbWavesEffect>Best Practices & Resources</a>
                 </div>
             </li>
             <li class="nav-item">

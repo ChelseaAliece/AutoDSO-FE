@@ -1,3 +1,12 @@
 mdb-navbar {
-    font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+.logospan {
+  color: #e0e0e0;
+}
+
+a:not([href]):not([tabindex]),
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
+  color: #4874c4;
 }
