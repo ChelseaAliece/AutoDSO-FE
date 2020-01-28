@@ -4,7 +4,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AutodsoComponent } from './autodso/autodso.component';
 import { DevsecopsComponent } from './devsecops/devsecops.component';
 import { BestPracticesComponent } from './best-practices/best-practices.component';
-import { ResourcesComponent } from './resources/resources.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './authentication/register/register.component';
@@ -21,7 +20,6 @@ const routes: Routes = [
       { path: 'about', component: AutodsoComponent },
       { path: 'devsecops', component: DevsecopsComponent },
       { path: 'best-practices', component: BestPracticesComponent },
-      { path: 'resources', component: ResourcesComponent },
       { path: 'assessment', component: SecurityAssessmentComponent }
     ],
     component: HomeComponent
@@ -36,7 +34,7 @@ const routes: Routes = [
   // },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  //  { path: 'manage', component: ResourcesComponent},
+  { path: 'manage', component: ManagementComponent},
 ];
 
 @NgModule({

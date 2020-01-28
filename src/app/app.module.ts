@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +12,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AutodsoComponent } from './autodso/autodso.component';
 import { DevsecopsComponent } from './devsecops/devsecops.component';
 import { BestPracticesComponent } from './best-practices/best-practices.component';
-import { ResourcesComponent } from './resources/resources.component';
 import { SecurityAssessmentComponent } from './security-assessment/security-assessment.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { LoginComponent } from './authentication/login/login.component';
@@ -18,6 +19,9 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { ManagementComponent } from './management/management.component';
+
+import { ValidationService } from './services/validation.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,6 @@ import { ManagementComponent } from './management/management.component';
     AutodsoComponent,
     DevsecopsComponent,
     BestPracticesComponent,
-    ResourcesComponent,
     SecurityAssessmentComponent,
     LoginComponent,
     HomeComponent,
@@ -38,6 +41,8 @@ import { ManagementComponent } from './management/management.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot(),
     StoreModule.forRoot(reducers, {
       metaReducers,
@@ -47,7 +52,10 @@ import { ManagementComponent } from './management/management.component';
       }
     })
   ],
-  providers: [],
+  providers: [
+    ValidationService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

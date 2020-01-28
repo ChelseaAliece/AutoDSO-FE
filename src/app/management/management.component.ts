@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-management',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./management.component.scss']
 })
 export class ManagementComponent implements OnInit {
+  user: Object;
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
+    this.authService.getProfile().subscribe(
+      profile => {
+        this.user = profile.user;
+      },
+      err => {
+        console.log(err);
+        return false;
+      }
+    );
   }
-
 }
