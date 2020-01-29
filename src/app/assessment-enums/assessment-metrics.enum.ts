@@ -1,0 +1,23 @@
+export enum AssessmentMetricsEnum {
+  TEST_COVERAGE = 'Percentage of code that is covered by automated tests',
+  CHANGE_TYPES = 'Percentage of features vs fixes vs security patches',
+  TIME_AVAILABILTY_EVENT_INFO = 'Time from an event to information about the event being available to the DevSecOps team or end users',
+  CHANGE_RESOLUTION_TIME = 'Time between a change proposal and closing (implementation or rejection)',
+  PLATFORM_CHANGE_VOLUME = 'Number of user stories deployed in a given time frame',
+  PLATFORM_CHANGE_FAILURE_RATE = 'Percentage of platform deployments that failed',
+  MTTR = 'Time from a failed platform deployment to full restoration of platform operations',
+  TIME_VULNERABILITY_PATCH = 'Time between identification of a vulnerability in the platform or application and successful production deployment of a patch',
+  TOTAL_MONITORING_ALERTS = 'Amount of monitoring alerts triggered in a given time period',
+  TOTAL_UNIT_INTEGRATION_TESTS = 'Number of automated unit or integration tests for an application',
+  TOTAL_FUNCTIONAL_ACCEPTANCE_TESTS = 'Number of automated functional or acceptance tests for an application',
+  MEAN_RECOVERY_POINT = 'Mean time range of data that is lost due to an incident',
+  RETENTION_CONTROL_COMPLIANCE = 'Percentage of retention-related controls that are automated',
+  TECHNICAL_CONTROLS = 'Number of technical security controls partially or fully in place',
+  VULNERABILITY_PATCH_LEAD_TIME = 'Time between discovery of a new vulnerability and patching in production',
+  TOTAL_SAR_FINDINGS = 'Number of findings in the Security Assessment Report (SAR)',
+  ARCHITECTURE_SECURITY_REVIEW_TIME = 'Time between initiating a request for security review of a new architecture, and completion',
+  TOTAL_SYSTEM_LOGGING = 'Number of systems (application, OS, services) in a DevSecOps platform  that are logging',
+  PRIVILEGE_AUDITING_PERCENTAGE = 'Number of times in a given time frame that users and their privileges are audited',
+  ADMINISTRATOR_COUNT = 'List and number of users that have administrator-level priveleges',
+  ONBOARDING_LEAD_TIME = 'Time between a request for a new application to use the DevSecOps platform and the application being deployed on the platform'
+  }

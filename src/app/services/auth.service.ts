@@ -5,6 +5,7 @@ import {
   HttpHeaders
 } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -34,9 +35,9 @@ export class AuthService {
   getProfile() {
     this.loadToken();
     const headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        // tslint:disable-next-line:object-literal-key-quotes
-        'Authorization': this.authToken
+      'Content-Type': 'application/json',
+      // tslint:disable-next-line:object-literal-key-quotes
+      Authorization: this.authToken
     });
     return this.http
       .get('http://localhost:3000/users/profile', { headers })
@@ -53,6 +54,15 @@ export class AuthService {
   loadToken() {
     const token = localStorage.getItem('id_token');
     this.authToken = token;
+  }
+
+  loggedIn() {
+    if (localStorage.id_token === undefined || localStorage.id_token === null ) {
+      return false;
+    } else {
+      const helper = new JwtHelperService();
+      return !helper.isTokenExpired(localStorage.id_token);
+    }
   }
 
   logout() {

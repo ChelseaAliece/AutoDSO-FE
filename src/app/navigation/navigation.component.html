@@ -74,6 +74,7 @@
       <li class="nav-item">
         <a
           class="nav-link waves-light"
+          *ngIf="authService.loggedIn()"
           [routerLink]="['/manage']"
           routerLinkActive="router-link-active"
           mdbWavesEffect
@@ -83,6 +84,7 @@
       <li class="nav-item">
         <a
           class="nav-link waves-light"
+          *ngIf="!authService.loggedIn()"
           [routerLink]="['/login']"
           routerLinkActive="router-link-active"
           mdbWavesEffect
@@ -92,6 +94,7 @@
       <li class="nav-item">
         <a
           class="nav-link waves-light"
+          *ngIf="!authService.loggedIn()"
           [routerLink]="['/register']"
           routerLinkActive="router-link-active"
           mdbWavesEffect
@@ -99,7 +102,11 @@
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" (click)="onLogoutClick()" mdbWavesEffect
+        <a
+          class="nav-link waves-light"
+          *ngIf="authService.loggedIn()"
+          (click)="onLogoutClick()"
+          mdbWavesEffect
           ><mdb-icon fas icon="cog"></mdb-icon>Logout</a
         >
       </li>

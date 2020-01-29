@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-management',
-  templateUrl: './management.component.html',
-  styleUrls: ['./management.component.scss']
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
-export class ManagementComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   user: Object;
 
   constructor(private authService: AuthService, private router: Router) {}

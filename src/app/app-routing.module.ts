@@ -8,8 +8,13 @@ import { LoginComponent } from './authentication/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { SecurityAssessmentComponent } from './security-assessment/security-assessment.component';
-import { ManagementComponent } from './management/management.component';
+import { ProfileComponent } from './manage/profile/profile.component';
+import { AssessmentComponent } from './assessment/assessment.component';
 
+import { ValidationService } from './services/validation.service';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { ManagementComponent } from './manage/management.component';
 
 const routes: Routes = [
   {
@@ -20,28 +25,39 @@ const routes: Routes = [
       { path: 'about', component: AutodsoComponent },
       { path: 'devsecops', component: DevsecopsComponent },
       { path: 'best-practices', component: BestPracticesComponent },
-      { path: 'assessment', component: SecurityAssessmentComponent }
+      { path: 'assessment', component: SecurityAssessmentComponent },
+      {
+        path: 'active-assessment',
+        component: AssessmentComponent,
+        canActivate: [AuthGuard]
+      },
+      { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
+      {
+        path: 'register',
+        component: RegisterComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'manage',
+        children: [
+          { path: '', component: ProfileComponent },
+          { path: 'profile', component: ProfileComponent }
+          // { path: "assessment-managment", component: ManagementComponent }
+        ],
+        component: ManagementComponent,
+        canActivate: [AuthGuard]
+      }
     ],
     component: HomeComponent
-  },
+  }
   //  { path: 'assessment', component: BestPracticesComponent},
-  // {
-  //   path: 'manage',
-  //   children: [
-  //     { path: '', component: },
-  //   ],
-  //   component: ManagementComponent
-  // },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'manage', component: ManagementComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 
 // {
 //   path: '',

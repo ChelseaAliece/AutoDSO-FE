@@ -18,10 +18,13 @@ import { LoginComponent } from './authentication/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './authentication/register/register.component';
-import { ManagementComponent } from './management/management.component';
+import { ProfileComponent } from './manage/profile/profile.component';
+import { ManagementComponent } from './manage/management.component';
 
 import { ValidationService } from './services/validation.service';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { AssessmentComponent } from './assessment/assessment.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { AuthService } from './services/auth.service';
     HomeComponent,
     FooterComponent,
     RegisterComponent,
-    ManagementComponent
+    ProfileComponent,
+    ManagementComponent,
+    AssessmentComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,8 @@ import { AuthService } from './services/auth.service';
   ],
   providers: [
     ValidationService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
