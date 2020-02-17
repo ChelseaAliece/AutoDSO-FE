@@ -15,6 +15,7 @@ import { ValidationService } from './services/validation.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { ManagementComponent } from './manage/management.component';
+import { AssessmentManagementComponent } from './manage/assessment-management/assessment-management.component';
 
 const routes: Routes = [
   {
@@ -31,18 +32,17 @@ const routes: Routes = [
         component: AssessmentComponent,
         canActivate: [AuthGuard]
       },
-      { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
+      { path: 'login', component: LoginComponent },
       {
         path: 'register',
         component: RegisterComponent,
-        canActivate: [AuthGuard]
       },
       {
         path: 'manage',
         children: [
           { path: '', component: ProfileComponent },
-          { path: 'profile', component: ProfileComponent }
-          // { path: "assessment-managment", component: ManagementComponent }
+          { path: 'profile', component: ProfileComponent },
+          { path: 'assessment-management', component: AssessmentManagementComponent }
         ],
         component: ManagementComponent,
         canActivate: [AuthGuard]
@@ -50,7 +50,6 @@ const routes: Routes = [
     ],
     component: HomeComponent
   }
-  //  { path: 'assessment', component: BestPracticesComponent},
 ];
 
 @NgModule({
@@ -59,14 +58,3 @@ const routes: Routes = [
 })
 export class AppRoutingModule {}
 
-// {
-//   path: '',
-//   children: [
-//     { path: '', component: HomeComponent },
-//     { path: 'temp', component: TempComponent },
-//     { path: 'temp2', component: TempComponent2 },
-//    ]
-//   component: HomeComponent
-// },
-// { path: 'logout', component: LogoutComponent },
-// { path: '**', redirectTo: '' }

@@ -1,9 +1,14 @@
 <div *ngIf="user">
-  <h2 class="page-header">{{ user.name }}</h2>
+  <h2>Welcome, {{ user.firstName }} {{ user.lastName }}!</h2>
+  <p>
+    From your dashboard you have the ability to view your profile information
+    and access your previosly taken assessments.
+  </p>
   <ul class="list-group">
-    <li class="list-group-item">First Name : {{ user.firstName}}</li>
-    <li class="list-group-item">Last Name : {{ user.lastName}}</li>
+    <li class="list-group-item">First Name : {{ user.firstName }}</li>
+    <li class="list-group-item">Last Name : {{ user.lastName }}</li>
     <li class="list-group-item">Email : {{ user.email }}</li>
+    <li class="list-group-item">Organization : {{ user.organization }}</li>
+    <li class="list-group-item">Role : {{ user.role }}</li>
   </ul>
 </div>
-

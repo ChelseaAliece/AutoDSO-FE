@@ -23,8 +23,10 @@ import { ManagementComponent } from './manage/management.component';
 
 import { ValidationService } from './services/validation.service';
 import { AuthService } from './services/auth.service';
+import { AssessmentService } from './services/assessment.service'
 import { AuthGuard } from './guards/auth.guard';
 import { AssessmentComponent } from './assessment/assessment.component';
+import { AssessmentManagementComponent } from './manage/assessment-management/assessment-management.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { AssessmentComponent } from './assessment/assessment.component';
     ProfileComponent,
     ManagementComponent,
     AssessmentComponent,
+    AssessmentManagementComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { AssessmentComponent } from './assessment/assessment.component';
   providers: [
     ValidationService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    AssessmentService
   ],
   bootstrap: [AppComponent]
 })

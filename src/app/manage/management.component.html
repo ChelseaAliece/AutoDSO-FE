@@ -1,18 +1,19 @@
 <div style="height: 100vh">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-3">
-          <ul class="nav flex-column grey lighten-4 py-4">
-            <li class="nav-item">
-              <a class="nav-link active" href="#!">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#!">Asssessment Management</a>
-            </li>
-          </ul>
-        </div>
-          <router-outlet></router-outlet>
+  <div class="container">
+    <div class="row management-margin">
+      <div class="col-md-3">
+        <h3>Dashboard</h3>
+        <ul class="nav flex-column lighten-4 py-4">
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/manage/profile']" routerLinkActive="router-link-active" >Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/manage/assessment-management']" routerLinkActive="router-link-active" >Asssessment Management</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9">
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>
