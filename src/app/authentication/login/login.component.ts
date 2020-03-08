@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     };
 
     this.authService.authenicateUser(user).subscribe((data: any) => {
-      if (data.success) {
+      if (data.success) { 
         this.authService.storeUserData(data.token, data.user);
         this.router.navigate(['/manage/profile']);
         console.log('sign in successful');

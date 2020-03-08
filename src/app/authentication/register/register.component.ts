@@ -3,6 +3,7 @@ import { throwStatement } from '@babel/types';
 import { ValidationService } from '../../services//validation.service';
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterModule } from '@angular/router';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-register',
@@ -12,6 +13,8 @@ import { Router, RouterModule } from '@angular/router';
 export class RegisterComponent implements OnInit {
   firstName: string;
   lastName: string;
+  role: string;
+  organization: string;
   email: string;
   password: string;
 
@@ -27,28 +30,49 @@ export class RegisterComponent implements OnInit {
     const user = {
       firstName: this.firstName,
       lastName: this.lastName,
+      role: this.role,
+      organization: this.organization,
       email: this.email,
       password: this.password
     };
 
+    if (this.validatePassword() === false) {
+      return false;
+    }
+
     if (!this.validationService.validateRegister(user)) {
-      console.log('please fill in all fields');
+      swal('Error!', 'Please fill in all fields!', 'error');
       return false;
     }
 
     if (!this.validationService.validateEmail(user.email)) {
-      console.log('please fill email correctly');
+      swal('Error!', 'Please fill in email correctly!', 'error');
       return false;
     }
 
     this.authService.registerUser(user).subscribe(data => {
       if ((data as any).success) {
-        console.log('You are now registered');
+        swal('Success!', 'Your are registered! Please log in.', 'Success');
+
         this.router.navigate(['/login']);
       } else {
-        console.log('You are not registered');
+        swal(
+          'Error',
+          'There is already a user registered with that email. Please log in!',
+          'error'
+        );
         this.router.navigate(['/register']);
       }
     });
+  }
+
+  validatePassword() {
+    if (this.password.length < 8) {
+        swal(
+          'Error',
+          'Password must contain more than 8 characters!',
+          'error'
+        );      return false;
+    }
   }
 }

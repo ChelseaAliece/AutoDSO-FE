@@ -3,6 +3,9 @@ import { AssessmentMetricsEnum } from '../assessment-enums/assessment-metrics.en
 import { AuthService } from '../services/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { AssessmentService } from '../services/assessment.service';
+import { Document, Packer, Paragraph, TextRun } from 'docx';
+import { saveAs } from 'file-saver';
+
 
 @Component({
   selector: 'app-assessment',
@@ -86,6 +89,29 @@ export class AssessmentComponent implements OnInit {
       } else {
         console.log('assessment failed');
       }
+    });
+
+    const doc = new Document();
+
+    doc.addSection({
+      properties: {},
+      children: [
+        new Paragraph({
+          children: [
+            new TextRun('Hello World'),
+            new TextRun({
+              text: 'Foo Bar',
+              bold: true
+            })
+          ]
+        })
+      ]
+    });
+
+    // Used to export the file into a .docx file
+    Packer.toBlob(doc).then(blob => {
+      // saveAs from FileSaver will download the file
+      saveAs(blob, 'example.docx');
     });
   }
 }
