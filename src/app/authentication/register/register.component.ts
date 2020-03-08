@@ -72,7 +72,8 @@ export class RegisterComponent implements OnInit {
           'Error',
           'Password must contain more than 8 characters!',
           'error'
-        );      return false;
+        );
+        return false;
     }
   }
 }

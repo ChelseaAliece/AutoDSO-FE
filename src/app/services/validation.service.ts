@@ -1,15 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ValidationService {
-
-  constructor() { }
+  constructor() {}
 
   validateRegister(user) {
-    if (user.firstName === undefined || user.lastName === undefined ||
-      user.email === undefined || user.password === undefined) {
+    if (
+      user.firstName === undefined ||
+      user.lastName === undefined ||
+      user.email === undefined ||
+      user.password === undefined
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  validateLogin(user) {
+    if (user.email === undefined || user.password === undefined) {
       return false;
     } else {
       return true;
