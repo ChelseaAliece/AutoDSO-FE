@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   // tslint:disable-next-line:ban-types
-  user: object;
+  user: Object;
 
   constructor(private authService: AuthService, private router: Router) {}
 

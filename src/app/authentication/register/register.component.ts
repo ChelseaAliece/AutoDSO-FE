@@ -67,13 +67,13 @@ export class RegisterComponent implements OnInit {
   }
 
   validatePassword() {
-    if (this.password.length < 8) {
-        swal(
-          'Error',
-          'Password must contain more than 8 characters!',
-          'error'
-        );
+    if (this.password !== undefined) {
+      if (this.password.length < 8) {
+        swal('Error', 'Password must contain more than 8 characters!', 'error');
         return false;
+      } else {
+        return true;
+      }
     }
   }
 }

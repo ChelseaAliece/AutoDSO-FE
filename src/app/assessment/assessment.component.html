@@ -4,13 +4,13 @@
       <form (submit)="onSubmit()">
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">1. {{
-              assessmentEnum.TEST_COVERAGE
-            }}</span>
+            <span class="input-group-text md-addon"
+              >1. {{ assessmentEnum.TEST_COVERAGE }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="testCoverage"
               name="testCoverage"
               id="testCoverage"
@@ -19,12 +19,12 @@
           </div>
         </div>
         <div class="md-form input-group">
-            <span class="input-group-text md-addon">2. {{
-              assessmentEnum.CHANGE_TYPES
-            }}</span>
+          <span class="input-group-text md-addon"
+            >2. {{ assessmentEnum.CHANGE_TYPES }}</span
+          >
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="changeTypes"
               name="changeTypes"
               id="changeTypes"
@@ -33,12 +33,12 @@
           </div>
         </div>
         <div class="md-form input-group">
-            <span class="input-group-text md-addon">3. {{
-              assessmentEnum.TIME_AVAILABILTY_EVENT_INFO
-            }} in hours.</span>
+          <span class="input-group-text md-addon"
+            >3. {{ assessmentEnum.TIME_AVAILABILTY_EVENT_INFO }} in hours.</span
+          >
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="timeAvailabilityEventInfo"
               name="timeAvailabilityEventInfo"
               id="timeAvailabilityEventInfo"
@@ -48,13 +48,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">4. {{
-              assessmentEnum.CHANGE_RESOLUTION_TIME
-            }} in hours.</span>
+            <span class="input-group-text md-addon"
+              >4. {{ assessmentEnum.CHANGE_RESOLUTION_TIME }} in hours.</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="changeResolutionTime"
               name="changeResolutionTime"
               id="changeResolutionTime"
@@ -64,13 +64,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">5. {{
-              assessmentEnum.PLATFORM_CHANGE_VOLUME
-            }}</span>
+            <span class="input-group-text md-addon"
+              >5. {{ assessmentEnum.PLATFORM_CHANGE_VOLUME }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="platformChangeVolumn"
               name="platformChangeVolumn"
               id="platformChangeVolumn"
@@ -80,13 +80,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">6. {{
-              assessmentEnum.PLATFORM_CHANGE_FAILURE_RATE
-            }}</span>
+            <span class="input-group-text md-addon"
+              >6. {{ assessmentEnum.PLATFORM_CHANGE_FAILURE_RATE }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="platformChangeFailureRate"
               name="platformChangeFailureRate"
               id="platformChangeFailureRate"
@@ -96,13 +96,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">7. {{
-              assessmentEnum.MTTR
-            }} in hours.</span>
+            <span class="input-group-text md-addon"
+              >7. {{ assessmentEnum.MTTR }} in hours.</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="MTTR"
               name="MTTR"
               id="MTTR"
@@ -112,13 +112,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">8. {{
-              assessmentEnum.TIME_VULNERABILITY_PATCH
-            }} in hours.</span>
+            <span class="input-group-text md-addon"
+              >8. {{ assessmentEnum.TIME_VULNERABILITY_PATCH }} in hours.</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="totalVulnerabilityPatch"
               name="totalVulnerabilityPatch"
               id="totalVulnerabilityPatch"
@@ -128,13 +128,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">9. {{
-              assessmentEnum.TOTAL_MONITORING_ALERTS
-            }}</span>
+            <span class="input-group-text md-addon"
+              >9. {{ assessmentEnum.TOTAL_MONITORING_ALERTS }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="totalMonitoringAlerts"
               name="totalMonitoringAlerts"
               id="totalMonitoringAlerts"
@@ -144,13 +144,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">10. {{
-              assessmentEnum.TOTAL_UNIT_INTEGRATION_TESTS
-            }}</span>
+            <span class="input-group-text md-addon"
+              >10. {{ assessmentEnum.TOTAL_UNIT_INTEGRATION_TESTS }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="totalUnitInegrationTests"
               name="totalUnitInegrationTests"
               id="totalUnitInegrationTests"
@@ -160,13 +160,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">11. {{
-              assessmentEnum.TOTAL_FUNCTIONAL_ACCEPTANCE_TESTS
-            }}</span>
+            <span class="input-group-text md-addon"
+              >11. {{ assessmentEnum.TOTAL_FUNCTIONAL_ACCEPTANCE_TESTS }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="totalFunctionalAcceptanceTexts"
               name="totalFunctionalAcceptanceTexts"
               id="totalFunctionalAcceptanceTexts"
@@ -176,13 +176,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">12. {{
-              assessmentEnum.MEAN_RECOVERY_POINT
-            }} in hours.</span>
+            <span class="input-group-text md-addon"
+              >12. {{ assessmentEnum.MEAN_RECOVERY_POINT }} in hours.</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="meanRecoveryPoint"
               name="meanRecoveryPoint"
               id="meanRecoveryPoint"
@@ -192,13 +192,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">13. {{
-              assessmentEnum.RETENTION_CONTROL_COMPLIANCE
-            }}</span>
+            <span class="input-group-text md-addon"
+              >13. {{ assessmentEnum.RETENTION_CONTROL_COMPLIANCE }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="retentionControlCompliance"
               name="retentionControlCompliance"
               id="retentionControlCompliance"
@@ -208,13 +208,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">14. {{
-              assessmentEnum.TECHNICAL_CONTROLS
-            }}</span>
+            <span class="input-group-text md-addon"
+              >14. {{ assessmentEnum.TECHNICAL_CONTROLS }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="technicalControls"
               name="technicalControls"
               id="technicalControls"
@@ -224,13 +224,14 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">15. {{
-              assessmentEnum.VULNERABILITY_PATCH_LEAD_TIME
-            }} in hours.</span>
+            <span class="input-group-text md-addon"
+              >15. {{ assessmentEnum.VULNERABILITY_PATCH_LEAD_TIME }} in
+              hours.</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="vulnerabilityPatchLeadTime"
               name="vulnerabilityPatchLeadTime"
               id="vulnerabilityPatchLeadTime"
@@ -240,13 +241,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">16. {{
-              assessmentEnum.TOTAL_SAR_FINDINGS
-            }}</span>
+            <span class="input-group-text md-addon"
+              >16. {{ assessmentEnum.TOTAL_SAR_FINDINGS }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="totalSarFindings"
               name="totalSarFindings"
               id="totalSarFindings"
@@ -256,13 +257,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">17. {{
-              assessmentEnum.ARCHITECTURE_SECURITY_REVIEW_TIME
-            }}</span>
+            <span class="input-group-text md-addon"
+              >17. {{ assessmentEnum.ARCHITECTURE_SECURITY_REVIEW_TIME }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="architectureSecurityReviewTime"
               name="architectureSecurityReviewTime"
               id="architectureSecurityReviewTime"
@@ -272,13 +273,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">18. {{
-              assessmentEnum.TOTAL_SYSTEM_LOGGING
-            }}</span>
+            <span class="input-group-text md-addon"
+              >18. {{ assessmentEnum.TOTAL_SYSTEM_LOGGING }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="totalSystemLogging"
               name="totalSystemLogging"
               id="totalSystemLogging"
@@ -288,13 +289,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">19. {{
-              assessmentEnum.PRIVILEGE_AUDITING_PERCENTAGE
-            }}</span>
+            <span class="input-group-text md-addon"
+              >19. {{ assessmentEnum.PRIVILEGE_AUDITING_PERCENTAGE }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="priviledgeAuditingPercentage"
               name="priviledgeAuditingPercentage"
               id="priviledgeAuditingPercentage"
@@ -304,13 +305,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">20. {{
-              assessmentEnum.ADMINISTRATOR_COUNT
-            }}</span>
+            <span class="input-group-text md-addon"
+              >20. {{ assessmentEnum.ADMINISTRATOR_COUNT }}</span
+            >
           </div>
           <div class="col-md-2 questionMargin">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="administratorCount"
               name="administratorCount"
               id="administratorCount"
@@ -320,13 +321,13 @@
         </div>
         <div class="md-form input-group">
           <div class="input-group-prepend">
-            <span class="input-group-text md-addon">21. {{
-              assessmentEnum.ONBOARDING_LEAD_TIME
-            }} in hours.</span>
+            <span class="input-group-text md-addon"
+              >21. {{ assessmentEnum.ONBOARDING_LEAD_TIME }} in hours.</span
+            >
           </div>
           <div class="col-md-2">
             <input
-              type="text"
+              type="number"
               [(ngModel)]="onboardingLeadTime"
               name="onboardingLeadTime"
               id="onboardingLeadTime"
@@ -334,9 +335,19 @@
             />
           </div>
         </div>
-        <button class="btn btn-info my-4 btn-block" type="submit" [disabled]="validationOnSubmit() === true">
+        <button
+          class="btn btn-info my-4 btn-block"
+          type="submit"
+          [disabled]="validationOnSubmit() === true"
+        >
           Submit Assessment
         </button>
+        <div class="text-center">
+          <span *ngIf="validationOnSubmit() === true"
+            >Cannot submit until all fields are filled out!</span
+          >
+        </div>
+        <br>
       </form>
     </div>
   </div>

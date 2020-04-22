@@ -15,7 +15,7 @@
         href="#collapseOne"
         *ngFor="let item of assessment;  let i = index"
       >
-        <td>{{ item.created_at | date: "MMMM d, y" }}</td>
+        <td>{{ item.created_at | date: "medium" }}</td>
         <td>
           <button
             type="button"

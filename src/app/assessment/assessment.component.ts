@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { AssessmentMetricsEnum } from "../assessment-enums/assessment-metrics.enum";
-import { AuthService } from "../services/auth.service";
-import { Router, RouterModule } from "@angular/router";
-import { AssessmentService } from "../services/assessment.service";
+import { Component, OnInit } from '@angular/core';
+import { AssessmentMetricsEnum } from '../assessment-enums/assessment-metrics.enum';
+import { AuthService } from '../services/auth.service';
+import { Router, RouterModule } from '@angular/router';
+import { AssessmentService } from '../services/assessment.service';
 import {
   Document,
   Packer,
@@ -12,18 +12,18 @@ import {
   TableRow,
   TableCell,
   WidthType
-} from "docx";
-import { saveAs } from "file-saver";
+} from 'docx';
+import { saveAs } from 'file-saver';
 
 @Component({
-  selector: "app-assessment",
-  templateUrl: "./assessment.component.html",
-  styleUrls: ["./assessment.component.scss"]
+  selector: 'app-assessment',
+  templateUrl: './assessment.component.html',
+  styleUrls: ['./assessment.component.scss']
 })
 export class AssessmentComponent implements OnInit {
   assessmentEnum = AssessmentMetricsEnum;
   assessment: object;
-  user: Object;
+  user: object;
   createdBy: string;
   testCoverage: number;
   changeTypes: number;
@@ -67,7 +67,7 @@ export class AssessmentComponent implements OnInit {
 
   onSubmit() {
     if (this.validationOnSubmit() === true) {
-      console.log("somethings is wrong");
+      console.log('somethings is wrong');
     } else {
       this.onAssessmentSubmit();
     }
@@ -126,10 +126,10 @@ export class AssessmentComponent implements OnInit {
     };
     this.assessmentService.newAssessment(assessment).subscribe(data => {
       if ((data as any).success) {
-        console.log("assessment created");
-        this.router.navigate(["/manage/assessment-management"]);
+        console.log('assessment created');
+        this.router.navigate(['/manage/assessment-management']);
       } else {
-        console.log("assessment failed");
+        console.log('assessment failed');
       }
     });
 
@@ -138,12 +138,8 @@ export class AssessmentComponent implements OnInit {
     const header = new Paragraph({
       children: [
         new TextRun({
-          text: "High Value Metrics",
-          font: "Calibri",
-          bold: true,
-          spacing: {
-            after: 200
-          }
+          text: 'High Value Metrics',
+          bold: true
         })
       ]
     });
@@ -152,11 +148,7 @@ export class AssessmentComponent implements OnInit {
       children: [
         new TextRun({
           text:
-            "These metrics provide useful information for a DevSecOps platform and should be implemented first in a new platform.",
-          font: "Arial",
-          spacing: {
-            before: 200
-          }
+            'These metrics provide useful information for a DevSecOps platform and should be implemented first in a new platform.'
         })
       ]
     });
@@ -165,11 +157,7 @@ export class AssessmentComponent implements OnInit {
       children: [
         new TextRun({
           text:
-            "This Security Metric Assessment is used to lay out the requirements that need to be met by the company’s standards. It should be used by CTO’s, CIO’s, and CISO’s to define the standard security metrics. This assessment will also be used by developers to understand and follow the standard security metrics set by the CTO’s, CIO’s, and CISO’s. This assessment will create a template that captures the requirements set by the higher authority, as well as provide documentation for the developers and auditors for easily identifying whether the requirements are being met. ",
-          font: "Arial",
-          spacing: {
-            before: 200
-          }
+            'This Security Metric Assessment is used to lay out the requirements that need to be met by the company’s standards. It should be used by CTO’s, CIO’s, and CISO’s to define the standard security metrics. This assessment will also be used by developers to understand and follow the standard security metrics set by the CTO’s, CIO’s, and CISO’s. This assessment will create a template that captures the requirements set by the higher authority, as well as provide documentation for the developers and auditors for easily identifying whether the requirements are being met. '
         })
       ]
     });
@@ -179,22 +167,22 @@ export class AssessmentComponent implements OnInit {
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Metric Name")],
-              font: "Calibri",
+              children: [new Paragraph('Metric Name')],
+              font: 'Calibri',
               width: {
                 size: 7000,
                 type: WidthType.DXA
               }
             }),
             new TableCell({
-              children: [new Paragraph("Description")],
+              children: [new Paragraph('Description')],
               width: {
                 size: 7000,
                 type: WidthType.DXA
               }
             }),
             new TableCell({
-              children: [new Paragraph("Metric")],
+              children: [new Paragraph('Metric')],
               width: {
                 size: 7000,
                 type: WidthType.DXA
@@ -205,26 +193,26 @@ export class AssessmentComponent implements OnInit {
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Test Coverage")]
+              children: [new Paragraph('Test Coverage')]
             }),
             new TableCell({
               children: [new Paragraph(this.assessmentEnum.TEST_COVERAGE)]
             }),
             new TableCell({
-              children: [new Paragraph(this.testCoverage) + '%']
+              children: [new Paragraph(this.testCoverage + '%')]
             })
           ]
         }),
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Change Types")]
+              children: [new Paragraph('Change Types')]
             }),
             new TableCell({
               children: [new Paragraph(this.assessmentEnum.CHANGE_TYPES)]
             }),
             new TableCell({
-              children: [new Paragraph(this.changeTypes) + '%']
+              children: [new Paragraph(this.changeTypes + '%')]
             })
           ]
         }),
@@ -232,23 +220,23 @@ export class AssessmentComponent implements OnInit {
           children: [
             new TableCell({
               children: [
-                new Paragraph("Time to availability of event information")
+                new Paragraph('Time to availability of event information')
               ]
             }),
             new TableCell({
               children: [
-                new Paragraph(this.assessmentEnum.TIME_AVAILABILTY_EVENT_INFO + ' HRS')
+                new Paragraph(this.assessmentEnum.TIME_AVAILABILTY_EVENT_INFO)
               ]
             }),
             new TableCell({
-              children: [new Paragraph(this.timeAvailabilityEventInfo)]
+              children: [new Paragraph(this.timeAvailabilityEventInfo + ' HRS')]
             })
           ]
         }),
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Change resolution time")]
+              children: [new Paragraph('Change resolution time')]
             }),
             new TableCell({
               children: [
@@ -263,7 +251,7 @@ export class AssessmentComponent implements OnInit {
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("DevSecOps platform change volume")]
+              children: [new Paragraph('DevSecOps platform change volume')]
             }),
             new TableCell({
               children: [
@@ -271,7 +259,7 @@ export class AssessmentComponent implements OnInit {
               ]
             }),
             new TableCell({
-              children: [new Paragraph(this.platformChangeVolumn)]
+              children: [new Paragraph(this.platformChangeVolumn.toString())]
             })
           ]
         }),
@@ -279,7 +267,7 @@ export class AssessmentComponent implements OnInit {
           children: [
             new TableCell({
               children: [
-                new Paragraph("DevSecOps platform change failure rate")
+                new Paragraph('DevSecOps platform change failure rate')
               ]
             }),
             new TableCell({
@@ -295,7 +283,7 @@ export class AssessmentComponent implements OnInit {
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Mean time to recovery (MTTR)")]
+              children: [new Paragraph('Mean time to recovery (MTTR)')]
             }),
             new TableCell({
               children: [new Paragraph(this.assessmentEnum.MTTR)]
@@ -308,7 +296,7 @@ export class AssessmentComponent implements OnInit {
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Time to patch vulnerabilities")]
+              children: [new Paragraph('Time to patch vulnerabilities')]
             }),
             new TableCell({
               children: [
@@ -323,7 +311,7 @@ export class AssessmentComponent implements OnInit {
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Number of monitoring alerts")]
+              children: [new Paragraph('Number of monitoring alerts')]
             }),
             new TableCell({
               children: [
@@ -331,14 +319,14 @@ export class AssessmentComponent implements OnInit {
               ]
             }),
             new TableCell({
-              children: [new Paragraph(this.totalMonitoringAlerts)]
+              children: [new Paragraph(this.totalMonitoringAlerts.toString())]
             })
           ]
         }),
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Number of unit/integration tests")]
+              children: [new Paragraph('Number of unit/integration tests')]
             }),
             new TableCell({
               children: [
@@ -346,14 +334,14 @@ export class AssessmentComponent implements OnInit {
               ]
             }),
             new TableCell({
-              children: [new Paragraph(this.totalUnitInegrationTests)]
+              children: [new Paragraph(this.totalUnitInegrationTests.toString())]
             })
           ]
         }),
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Number of functional/acceptance tests")]
+              children: [new Paragraph('Number of functional/acceptance tests')]
             }),
             new TableCell({
               children: [
@@ -363,14 +351,14 @@ export class AssessmentComponent implements OnInit {
               ]
             }),
             new TableCell({
-              children: [new Paragraph(this.totalFunctionalAcceptanceTexts)]
+              children: [new Paragraph(this.totalFunctionalAcceptanceTexts.toString())]
             })
           ]
         }),
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Mean recovery point")]
+              children: [new Paragraph('Mean recovery point')]
             }),
             new TableCell({
               children: [new Paragraph(this.assessmentEnum.MEAN_RECOVERY_POINT)]
@@ -383,7 +371,7 @@ export class AssessmentComponent implements OnInit {
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Retention control compliance")]
+              children: [new Paragraph('Retention control compliance')]
             }),
             new TableCell({
               children: [
@@ -398,20 +386,20 @@ export class AssessmentComponent implements OnInit {
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Technical controls")]
+              children: [new Paragraph('Technical controls')]
             }),
             new TableCell({
               children: [new Paragraph(this.assessmentEnum.TECHNICAL_CONTROLS)]
             }),
             new TableCell({
-              children: [new Paragraph(this.technicalControls)]
+              children: [new Paragraph(this.technicalControls.toString())]
             })
           ]
         }),
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Vulnerability patching lead time")]
+              children: [new Paragraph('Vulnerability patching lead time')]
             }),
             new TableCell({
               children: [
@@ -426,13 +414,13 @@ export class AssessmentComponent implements OnInit {
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("SAR findings count")]
+              children: [new Paragraph('SAR findings count')]
             }),
             new TableCell({
               children: [new Paragraph(this.assessmentEnum.TOTAL_SAR_FINDINGS)]
             }),
             new TableCell({
-              children: [new Paragraph(this.totalSarFindings)]
+              children: [new Paragraph(this.totalSarFindings.toString())]
             })
           ]
         }),
@@ -440,7 +428,7 @@ export class AssessmentComponent implements OnInit {
           children: [
             new TableCell({
               children: [
-                new Paragraph("New architecture security review lead time")
+                new Paragraph('New architecture security review lead time')
               ]
             }),
             new TableCell({
@@ -458,7 +446,7 @@ export class AssessmentComponent implements OnInit {
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("System logging count")]
+              children: [new Paragraph('System logging count')]
             }),
             new TableCell({
               children: [
@@ -466,14 +454,14 @@ export class AssessmentComponent implements OnInit {
               ]
             }),
             new TableCell({
-              children: [new Paragraph(this.totalSystemLogging)]
+              children: [new Paragraph(this.totalSystemLogging.toString())]
             })
           ]
         }),
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Privilege auditing frequency")]
+              children: [new Paragraph('Privilege auditing frequency')]
             }),
             new TableCell({
               children: [
@@ -481,27 +469,27 @@ export class AssessmentComponent implements OnInit {
               ]
             }),
             new TableCell({
-              children: [new Paragraph(this.priviledgeAuditingPercentage)]
+              children: [new Paragraph(this.priviledgeAuditingPercentage.toString())]
             })
           ]
         }),
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Administrator count")]
+              children: [new Paragraph('Administrator count')]
             }),
             new TableCell({
               children: [new Paragraph(this.assessmentEnum.ADMINISTRATOR_COUNT)]
             }),
             new TableCell({
-              children: [new Paragraph(this.administratorCount)]
+              children: [new Paragraph(this.administratorCount.toString())]
             })
           ]
         }),
         new TableRow({
           children: [
             new TableCell({
-              children: [new Paragraph("Onboarding Lead Time")]
+              children: [new Paragraph('Onboarding Lead Time')]
             }),
             new TableCell({
               children: [
@@ -524,7 +512,7 @@ export class AssessmentComponent implements OnInit {
     // Used to export the file into a .docx file
     Packer.toBlob(doc).then(blob => {
       // saveAs from FileSaver will download the file
-      saveAs(blob, "example.docx");
+      saveAs(blob, 'AutoDSOSXecurityMetrics.docx');
     });
   }
 }

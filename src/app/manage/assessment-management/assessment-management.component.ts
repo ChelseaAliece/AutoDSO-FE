@@ -67,11 +67,7 @@ export class AssessmentManagementComponent implements OnInit {
       children: [
         new TextRun({
           text: 'High Value Metrics',
-          font: 'Calibri',
-          bold: true,
-          spacing: {
-            after: 200
-          }
+          bold: true
         })
       ]
     });
@@ -80,11 +76,7 @@ export class AssessmentManagementComponent implements OnInit {
       children: [
         new TextRun({
           text:
-            'These metrics provide useful information for a DevSecOps platform and should be implemented first in a new platform.',
-          font: 'Arial',
-          spacing: {
-            before: 200
-          }
+            'These metrics provide useful information for a DevSecOps platform and should be implemented first in a new platform.'
         })
       ]
     });
@@ -93,11 +85,7 @@ export class AssessmentManagementComponent implements OnInit {
       children: [
         new TextRun({
           text:
-            'This Security Metric Assessment is used to lay out the requirements that need to be met by the company’s standards. It should be used by CTO’s, CIO’s, and CISO’s to define the standard security metrics. This assessment will also be used by developers to understand and follow the standard security metrics set by the CTO’s, CIO’s, and CISO’s. This assessment will create a template that captures the requirements set by the higher authority, as well as provide documentation for the developers and auditors for easily identifying whether the requirements are being met. ',
-          font: 'Arial',
-          spacing: {
-            before: 200
-          }
+            'This Security Metric Assessment is used to lay out the requirements that need to be met by the company’s standards. It should be used by CTO’s, CIO’s, and CISO’s to define the standard security metrics. This assessment will also be used by developers to understand and follow the standard security metrics set by the CTO’s, CIO’s, and CISO’s. This assessment will create a template that captures the requirements set by the higher authority, as well as provide documentation for the developers and auditors for easily identifying whether the requirements are being met. '
         })
       ]
     });
@@ -108,7 +96,6 @@ export class AssessmentManagementComponent implements OnInit {
           children: [
             new TableCell({
               children: [new Paragraph('Metric Name')],
-              font: 'Calibri',
               width: {
                 size: 7000,
                 type: WidthType.DXA
